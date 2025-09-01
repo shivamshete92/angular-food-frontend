@@ -5,18 +5,21 @@ phases:
     runtime-versions:
       nodejs: 16
     commands:
-      - echo Installing Angular CLI and dependencies...
-      - npm cache clean --force
-      - npm install -g @angular/cli
-      - npm install --force
+      - echo Cleaning node_modules and package-lock.json...
+      - rm -rf node_modules package-lock.json
+      - echo Installing dependencies (ignoring peer conflicts)...
+      - npm install --legacy-peer-deps --force
+
   build:
     commands:
       - echo Build started on `date`
-      - ng build --configuration production
+      - npx ng build --configuration production
+
 artifacts:
   files:
     - '**/*'
   base-directory: dist/angular-food-frontend
+
 
 
 
