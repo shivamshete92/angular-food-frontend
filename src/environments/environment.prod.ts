@@ -1,6 +1,8 @@
 export const environment = {
   production: true,
-  portalTitle: 'FCWR',
-  apiBaseUrl: "http://localhost:3004/v1/",
-  baseAPIUrlNotification: "http://localhost:3002/v1/",
+  apiBaseUrl: "https://your-api-domain.com/v1/", // ✅ replace with production API
+  baseAPIUrlImage: "https://your-image-api-domain.com/v1/", // ✅ replace with production image API
+  baseAPIUrlNotification: "https://your-notification-api.com/v1/",
+  portalTitle: "FCWR",
 };
+
