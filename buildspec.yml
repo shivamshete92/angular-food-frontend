@@ -8,7 +8,7 @@ phases:
       - echo Installing Angular CLI and dependencies...
       - npm cache clean --force
       - npm install -g @angular/cli
-      - npm ci || npm install
+      - npm install --force
   build:
     commands:
       - echo Build started on `date`
