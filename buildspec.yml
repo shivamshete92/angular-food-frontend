@@ -5,20 +5,21 @@ phases:
     runtime-versions:
       nodejs: 16
     commands:
-      - echo Cleaning node_modules and package-lock.json...
+      - echo "Cleaning node_modules and package-lock.json..."
       - rm -rf node_modules package-lock.json
-      - echo Installing dependencies (ignoring peer conflicts)...
+      - echo "Installing dependencies with legacy peer deps..."
       - npm install --legacy-peer-deps --force
 
   build:
     commands:
-      - echo Build started on `date`
+      - echo "Build started on `date`"
       - npx ng build --configuration production
 
 artifacts:
   files:
     - '**/*'
   base-directory: dist/angular-food-frontend
+
 
 
 
